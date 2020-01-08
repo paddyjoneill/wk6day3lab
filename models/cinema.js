@@ -36,4 +36,10 @@ Cinema.prototype.totalFilmRunTime = function() {
   return result
 }
 
+Cinema.prototype.filmsByProperty = function (property, value) {
+  const result = this.films.filter((film) => film[property] === value)
+  return result
+}
+
+
 module.exports = Cinema;
