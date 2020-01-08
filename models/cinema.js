@@ -19,4 +19,21 @@ Cinema.prototype.filterByGenre = function (genre) {
   return result
 }
 
+Cinema.prototype.checkFilmsByYear = function (year) {
+  const result = this.films.some((film) => film.year === year)
+  return result
+}
+
+Cinema.prototype.checkFilmsOverLength = function(length) {
+  const result = this.films.every((film) => film.length > length)
+  return result
+}
+
+Cinema.prototype.totalFilmRunTime = function() {
+  const result = this.films.reduce((runningTotal, film) => {
+    return  runningTotal + film.length
+  }, 0 )
+  return result
+}
+
 module.exports = Cinema;
